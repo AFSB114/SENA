@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="container">
+            <div class="col-12 row formulario">
+                <div class="col-8 form">
+                    <h2>Porcentaje de un Número</h2>
+                    <form class="row g-3 needs-validation" novalidate onsubmit="return porcent()">
+                        
+                        <div class="col-md-4">
+                            <label for="txtNum" class="form-label">Número</label>
+                            <input type="number" class="form-control" id="txtNum" required min="0">
+                            <div class="valid-feedback">
+                                Número Correcto!
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <button class="btn btn-primary" type="submit" onclick="porcent()">Calcular</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-4 respuesta">
+                    <div class="col-12">
+                        <h2>Respuesta</h2>
+                        <div id="result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./Bootstrap/js/bootstrap.js"></script>
+    <script src="./Bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="./js/validation.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

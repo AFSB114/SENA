@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/notas.js"></script>
+</head>
+
+<body>
+    <script>
+        let nota1 = notas(4.5, 0.2);
+        let nota2 = notas(2.5, 0.35);
+        let nota3 = notas(3, 0.45);
+        let suma = nota1 + nota2 + nota3;
+        console.log(suma);
+        if (suma > 4.5) {
+            console.log('La nota es superior');
+        } else if (suma > 3.5) {
+            console.log('La nota es buena');
+        } else if (suma >= 3) {
+            console.log('La nota es media');
+        } else {
+            console.log('La nota es mala');
+        }
+    </script>
+</body>
+
+</html>

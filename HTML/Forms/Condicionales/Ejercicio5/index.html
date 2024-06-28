@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="container">
+            <div class="col-12 row formulario">
+                <div class="col-8 form">
+                    <h3>Calcular edad</h3>
+                    <form class="row g-3 needs-validation" novalidate onsubmit="return comp()">
+                        <div class="col-md-4">
+                            <label for="date1" class="form-label">Fecha de Nacimiento 1</label>
+                            <input type="date" class="form-control" id="date1" required min="0">
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="date2" class="form-label">Fecha de Nacimiento 2</label>
+                            <input type="date" class="form-control" id="date2" required min="0">
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="date3" class="form-label">Fecha de Nacimiento 3</label>
+                            <input type="date" class="form-control" id="date3" required min="0">
+                        </div>
+
+                        <div class="col-12">
+                            <button class="btn btn-primary" type="submit" onclick="comp()">Calcular</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-4 respuesta">
+                    <div class="col-12">
+                        <h3>Respuesta</h3>
+                        <div id="result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./Bootstrap/js/bootstrap.js"></script>
+    <script src="./Bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="./js/validation.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

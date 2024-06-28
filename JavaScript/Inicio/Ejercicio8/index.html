@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let salario, diasTra, valorDia, salud, pension, arl, desc;
+        diasTra = 30, valorDia = 10000;
+        salario = diasTra * valorDia;
+        salud = salario * 0.12;
+        pension = salario * 0.16;
+        arl = salario * 0.052;
+        console.log("salud: " + salud + '\nPension: ' + pension + '\narl: ' + arl);
+        desc = salud + pension + arl;
+        salario = salario - desc;
+        console.log('Salario: ' + salario);
+    </script>
+</body>
+
+</html>

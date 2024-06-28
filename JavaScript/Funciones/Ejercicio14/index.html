@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/salario.js"></script>
+</head>
+
+<body>
+    <script>
+        let valSalario = salario(30, 50000);
+        //console.log(`Salario: ${valSalario}`);
+        let valSubTrans = subTrans(valSalario);
+        //console.log(`Subsidio Transporte: ${valSubTrans}`);
+        let valRetencion = retencion(valSalario);
+        let valDeducible = deducible(valSalario)
+        let valPagoTot = pagoTot(valSalario, valSubTrans, valRetencion, valDeducible);
+        console.log(`Pago Total: ${valPagoTot}`);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+.formulario {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 10px;
+    padding: 5px 15px;
+    border-radius: 6px;
+}
+
+.form, .respuesta {
+    border: 2px solid black;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 6px;
+}
+
+.form {
+    padding: 10px;
+}
+
+.respuesta #suma {
+    position: relative;
+    left: 50px;
+    top: 50px;
+    font-size: 120%;
+    color: rgb(0, 168, 31);
+    font-weight: bold;
+}

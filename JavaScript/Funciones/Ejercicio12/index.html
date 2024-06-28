@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/areas.js"></script>
+</head>
+
+<body>
+    <script>
+        let cuad1 = areas(3);
+        let cuad2 = areas(4);
+        let cuad3 = areas(2);
+        if (cuad1 == cuad2 && cuad2 == cuad3 && cuad3 == cuad1) {
+            console.log('Son iguales');
+        } else if (cuad1 > cuad2 && cuad1 > cuad3) {
+            console.log('El cuadrado 1 es mayor');
+        } else if (cuad2 > cuad1 && cuad2 > cuad3) {
+            console.log('El cuadrado 2 es mayor');
+        } else {
+            console.log('El cuadrado 3 es mayor');
+        }
+    </script>
+</body>
+
+</html>

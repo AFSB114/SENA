@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="col-12 row formulario">
+            <div class="col-8 form">
+                <h2>Hace Operaciones con Dos Números</h2>
+                <form class="row g-3 needs-validation" novalidate onsubmit="return operaciones()">
+
+                    <div class="col-md-4">
+                        <label for="txtNum1" class="form-label">Número Uno</label>
+                        <input type="number" class="form-control" id="txtNum1" required min="0">
+                        <div class="valid-feedback">
+                            Número Uno Correcto!
+                        </div>
+                        <div class="invalid-feedback" id="zero"></div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="txtNum2" class="form-label">Número Dos</label>
+                        <input type="number" class="form-control" id="txtNum2" required min="0">
+                        <div class="valid-feedback">
+                            Número Dos Correcto!
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="validationCustom04" class="form-label">Operaciones</label>
+                        <select class="form-select" id="operacion" required>
+                            <option selected value=""></option>
+                            <option value="1">Suma</option>
+                            <option value="2">Resta</option>
+                            <option value="3">Multiplicación</option>
+                            <option value="4">Division</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Seleccione uno de las operaciones de la lista
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <button class="btn btn-primary" type="submit" onclick="operaciones()">Calcular</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-4 respuesta">
+                <div class="col-12">
+                    <h2>Respuesta</h2>
+                    <div id="operaciones"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./Bootstrap/js/bootstrap.js"></script>
+    <script src="./Bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="./js/validation.js"></script>
+    <script src="./js/operaciones.js"></script>
+</body>
+
+</html>

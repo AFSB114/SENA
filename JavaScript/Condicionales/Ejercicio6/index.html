@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let salario, diasTra, valDia, salud, pension, arl, transporte, salarioMin, deducible;
+        diasTra = 30, valDia = 100000, salarioMin = 1000000, transporte = 20000;
+        salario = diasTra * valDia;
+        console.log(salario);
+        if (salario > salarioMin * 4) {
+            salario = salario - (salario * 0.04);
+        } else {
+            salario -= 0;
+        }
+        if (salario > salarioMin * 2) {
+            salario += transporte;
+        } else {
+            salario = salario + 0;
+        }
+        salud = salario * 0.12;
+        pension = salario * 0.16;
+        arl = salario * 0.052;
+        console.log(salud, pension, arl);
+        deducible = salud + pension + arl;
+        salario = salario - deducible;
+        console.log(salario);
+    </script>
+</body>
+
+</html>

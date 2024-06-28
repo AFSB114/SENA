@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="container">
+            <div class="col-12 row formulario">
+                <div class="col-8 form">
+                    <h2>Resultado Nota Final</h2>
+                    <form class="row g-3 needs-validation" novalidate onsubmit="return prom()">
+
+                        <div class="col-md-4">
+                            <label for="txtNum1" class="form-label">Nota 1</label>
+                            <input type="number" class="form-control" id="txtNum1" required min="0" max="5" step="0.1">
+                            <div class="valid-feedback">
+                                Nota Correcta!
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="txtNum2" class="form-label">Nota 2</label>
+                            <input type="number" class="form-control" id="txtNum2" required min="0" max="5" step="0.1">
+                            <div class="valid-feedback">
+                                Nota Correcta!
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="txtNum3" class="form-label">Nota 3</label>
+                            <input type="number" class="form-control" id="txtNum3" required min="0" max="5" step="0.1">
+                            <div class="valid-feedback">
+                                Nota Correcta!
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <button class="btn btn-primary" type="submit" onclick="prom()">Calcular</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-4 respuesta">
+                    <div class="col-12">
+                        <h2>Respuesta</h2>
+                        <div id="result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./Bootstrap/js/bootstrap.js"></script>
+    <script src="./Bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="./js/validation.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

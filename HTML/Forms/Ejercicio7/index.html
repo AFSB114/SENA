@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="container">
+            <div class="col-12 row formulario">
+                <div class="col-8 form">
+                    <h2>Area de figuras</h2>
+                    <form class="row g-3 needs-validation" novalidate onsubmit="return area()">
+
+                        <div class="col-md-3">
+                            <label for="figuras" class="form-label">Figura</label>
+                            <select class="form-select" id="figuras" required onchange="figure()">
+                                <option selected disabled value=""></option>
+                                <option value="1">Cuadrado</option>
+                                <option value="2">Rectangulo</option>
+                                <option value="3">Triangulo</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Selecciona uno de los de la lista
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="txtNum1" class="form-label">Base</label>
+                            <input type="number" class="form-control" id="txtNum1" required min="0">
+                            <div class="valid-feedback">
+                                Valor válido!
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="txtNum2" class="form-label">Altura</label>
+                            <input type="number" class="form-control" id="txtNum2" required min="0">
+                            <div class="valid-feedback">
+                                Valor válido!
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <button class="btn btn-primary" type="submit" onclick="area()">Calcular</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-4 respuesta">
+                    <div class="col-12">
+                        <h2>Respuesta</h2>
+                        <div id="result" class="container">
+                            <div id="altura"></div>
+                            <i class="bi bi" id="figura"></i>
+                            <div id="area"></div>
+                            <div id="base"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./Bootstrap/js/bootstrap.js"></script>
+    <script src="./Bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="./js/validation.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

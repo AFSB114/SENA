@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="container">
+            <div class="col-12 row formulario">
+                <div class="col-8 form">
+                    <h3>Calcular edad</h3>
+                    <form class="row g-3 needs-validation" novalidate onsubmit="return edad()">
+                        <div class="col-md-8">
+                            <label for="fechaNa" class="form-label">Fecha de nacimiento</label>
+                            <input type="date" class="form-control" id="fechaNa" required min="0">
+                            <div class="valid-feedback">
+                                Fecha Correcta!
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <button class="btn btn-primary" type="submit" onclick="edad()">Calcular</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-4 respuesta">
+                    <div class="col-12">
+                        <h3>Respuesta</h3>
+                        <div id="edad"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./Bootstrap/js/bootstrap.js"></script>
+    <script src="./Bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="./js/validation.js"></script>
+    <script src="./js/edad.js"></script>
+</body>
+</html>

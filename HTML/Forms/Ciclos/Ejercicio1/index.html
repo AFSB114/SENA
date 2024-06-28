@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="container">
+            <div class="col-12 row formulario">
+                <div class="col-8 form">
+                    <h2>Ciclo Número</h2>
+                    <form class="row g-3 needs-validation" novalidate onsubmit="return ciclo()">
+
+                        <div class="col-md-4">
+                            <label for="start" class="form-label">Número Inicio</label>
+                            <input type="number" class="form-control" id="start" required min="0" value="1" disabled>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="end" class="form-label">Número Fin</label>
+                            <input type="number" class="form-control" id="end" required min="0" value="5">
+                        </div>
+
+                        <div class="col-12">
+                            <button class="btn btn-primary" type="submit" onclick="ciclo()">Imprimir</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-4 respuesta">
+                    <div class="col-12">
+                        <h2>Respuesta</h2>
+                        <div id="result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./Bootstrap/js/bootstrap.js"></script>
+    <script src="./Bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="./js/validation.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

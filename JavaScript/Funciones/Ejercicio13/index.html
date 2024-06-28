@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/edades.js"></script>
+</head>
+
+<body>
+    <script>
+        let edad1 = edades(1999, 2024);
+        let edad2 = edades(2018, 2024);
+        let edad3 = edades(2007, 2024);
+        let suma = edad1 + edad2 + edad3;
+        let prom = promedio(suma, 3);
+        console.log(prom);
+        if (prom > 17) {
+            console.log('El promedio cumple con la mayoria de edad');
+        } else {
+            console.log('El promedio no cumple con la mayoria de edad');
+        }
+    </script>
+</body>
+
+</html>

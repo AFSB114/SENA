@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let cuad1, cuad2, cuad3, lado1, lado2, lado3;
+        lado1 = 5, lado2 = 16, lado3 = 15;
+        cuad1 = lado1 * lado1;
+        cuad2 = lado2 * lado2;
+        cuad3 = lado3 * lado3;
+        if (cuad1 == cuad2 && cuad2 == cuad3 && cuad3 == cuad1) {
+            console.log('Son iguales');
+        } else if (cuad1 > cuad2 && cuad1 > cuad3) {
+            console.log('El cuadrado 1 es mayor');
+        } else if (cuad2 > cuad1 && cuad2 > cuad3) {
+            console.log('El cuadrado 2 es mayor');
+        } else {
+            console.log('El cuadrado 3 es mayor');
+        }
+    </script>
+</body>
+
+</html>

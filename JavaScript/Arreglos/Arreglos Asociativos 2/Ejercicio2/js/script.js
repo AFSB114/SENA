@@ -1,23 +1,32 @@
-let array1 = [1, 2, 3, 4, 5, 6, 7, 8, 10]
-
-let resultado1 = ''
-
-for (let i = 0; i < array1.length; i++) {
-    resultado1 += `<li class="list-group-item">${array1[i]}</li>`
+let factorial = []
+let nums = []
+let result
+for (let index1 = 1; index1 <= 5; index1++) {
+    nums.push(index1)
+    nums.push('')
+    nums.push(index1)
+    for (let index2 = index1; index2 >= 1; index2--) {
+        nums[1] += `${index2}`
+        if (index2 !== 1) {
+            nums[1] += ' X '
+            if (index2 === nums[2]) {
+                continue
+            }
+            nums[2] *= index2
+        }
+    }
+    factorial.push(nums)
+    nums = []
 }
 
-document.getElementById('listNum1').innerHTML = resultado1
-
-let array2 = []
-
-for (let i = 0; i < 10; i++) {
-    array2.push(i+1)
+let screen = ''
+for (let index = 0; index < factorial.length; index++) {
+    screen += `        <ul class="list-group list-group-horizontal">
+            <li class="list-group-item col-4">${factorial[index][0]}!</li>
+            <li class="list-group-item col-4">${factorial[index][1]}</li>
+            <li class="list-group-item col-4">${factorial[index][2]}</li>
+        </ul>
+        `
 }
 
-let resultado2 = ''
-
-for (let i = 0; i < array2.length; i++) {
-    resultado2 += `<li class="list-group-item">${array2[i]}</li>`
-}
-
-document.getElementById('listNum2').innerHTML = resultado2
+document.getElementById('list-groups').innerHTML = screen

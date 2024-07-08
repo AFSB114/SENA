@@ -1,0 +1,52 @@
+Arreglos asociativos (Objetos)
+
+Objeto
+
+let objeto {
+	'nombre': 'Juan',
+	'apellido': 'Perez',
+	'edad': 30,
+	'ocupación': 'Desarrollador'
+}
+
+for (let clave in objeto) {
+	console.log(clave + ': ' + objeto.clave)
+}
+
+-----------------------------------------------------------
+
+Map
+
+let map = new Map();
+map.set('nombre', 'Juan');
+map.set('edad', 30);
+
+for (let [clave, valor] of map) {
+	console.log(clave + ': ' + valor)
+}
+
+-----------------------------------------------------------
+
+Arreglo de objetos
+
+let arreglo = [
+	{clave: 'nombre', valor: 'Juan'},
+	{clave: 'edad', valor: 30} 
+]
+
+for (let elemento of arreglo) {
+	console.log(elemento.clave + ': ' + elemento.valor)
+}
+
+------------------|-----------------------------------------
+
+Arreglo de Pares
+
+let pares = [
+	['nombre', 'Juan'],
+	['edad', 30]
+}
+
+for (let [clave, valor] of pares) {
+	console.log(clave + ': ' + valor)
+}

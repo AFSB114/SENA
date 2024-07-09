@@ -21,7 +21,8 @@ for (let index1 = 1; index1 <= 5; index1++) {
 
 let screen = ''
 for (let index = 0; index < factorial.length; index++) {
-    screen += `        <ul class="list-group list-group-horizontal">
+    screen += `
+        <ul class="list-group list-group-horizontal">
             <li class="list-group-item col-4">${factorial[index][0]}!</li>
             <li class="list-group-item col-4">${factorial[index][1]}</li>
             <li class="list-group-item col-4">${factorial[index][2]}</li>

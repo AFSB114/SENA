@@ -1,25 +1,27 @@
 let factorial = []
-let nums = []
+let data = []
 let result
+
 for (let index1 = 1; index1 <= 5; index1++) {
-    nums.push(index1)
-    nums.push('')
-    nums.push(index1)
+    data.push(index1)
+    data.push('')
+    data.push(index1)
     for (let index2 = index1; index2 >= 1; index2--) {
-        nums[1] += `${index2}`
+        data[1] += `${index2}`
         if (index2 !== 1) {
-            nums[1] += ' X '
-            if (index2 === nums[2]) {
+            data[1] += ' X '
+            if (index2 === data[2]) {
                 continue
             }
-            nums[2] *= index2
+            data[2] *= index2
         }
     }
-    factorial.push(nums)
-    nums = []
+    factorial.push(data)
+    data = []
 }
 
 let screen = ''
+
 for (let index = 0; index < factorial.length; index++) {
     screen += `
         <ul class="list-group list-group-horizontal">

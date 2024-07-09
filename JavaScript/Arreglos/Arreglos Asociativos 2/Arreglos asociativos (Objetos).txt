@@ -38,7 +38,7 @@ for (let elemento of arreglo) {
 	console.log(elemento.clave + ': ' + elemento.valor)
 }
 
-------------------|-----------------------------------------
+-----------------------------------------------------------
 
 Arreglo de Pares
 

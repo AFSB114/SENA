@@ -59,8 +59,8 @@ for (let index1 = 0; index1 < 5; index1++) {
 }
 
 
-let tablas = document.getElementsByName('nums')
+let tables = document.getElementsByName('nums')
 
-tablas.forEach(tabla => {
+tables.forEach(tabla => {
     tabla.innerHTML = screen
 })

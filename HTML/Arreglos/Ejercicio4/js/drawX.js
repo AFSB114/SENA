@@ -4,7 +4,7 @@ function drawLine(start, end) {
     let point1 = start.getBoundingClientRect()
     let point2 = end.getBoundingClientRect()
 
-    // Calcula las coordenadas especificas en el eje Y y X de cada punto
+    // Calcula las coordenadas del punto central de cada elemento
     let x1 = point1.left + point1.width / 2
     let y1 = point1.top + point1.height / 2
     let x2 = point2.left + point2.width / 2

@@ -8,16 +8,16 @@ function colorLetter() {
                     cell.classList.add('table-primary')
                     break
                 case index2 === 1:
-                    cell.classList.add('table-secondary')
-                    break
-                case index2 === 2:
                     cell.classList.add('table-success')
                     break
-                case index2 === 3:
+                case index2 === 2:
                     cell.classList.add('table-danger')
                     break
-                case index2 === 4:
+                case index2 === 3:
                     cell.classList.add('table-warning')
+                    break
+                case index2 === 4:
+                    cell.classList.add('table-info')
                     break
             }
             cell.classList.add('border-dark')

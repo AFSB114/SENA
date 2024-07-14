@@ -1,4 +1,4 @@
-function drawLine(start, end) {
+function drawLine(start, end, id) {
 
     // Extrae las coordenadas de cada elemento en el documento
     let point1 = start.getBoundingClientRect()
@@ -20,6 +20,7 @@ function drawLine(start, end) {
 
     // Crea la linea y la ubica en la posicion y el angulo calculado
     let line = document.createElement('div')
+    line.id = `${id}`
     line.className = 'line'
     line.style.width = `${length}px`
     line.style.transform = `rotate(${angle}deg)`
@@ -29,36 +30,31 @@ function drawLine(start, end) {
     document.body.appendChild(line)
 }
 
-function drawX() {
+function drawXInTable(tableId, coordinates) {
 
-    function drawXInTable(tableId, coordinates) {
+    const table = document.getElementById(tableId);
 
-        const table = document.getElementById(tableId);
+    coordinates.forEach(([[x1, y1], [x2, y2], id]) => {
 
-        coordinates.forEach(([[x1, y1], [x2, y2]]) => {
+        let start = table.children.nums.children[x1].cells[y1];
+        let end = table.children.nums.children[x2].cells[y2];
 
-            let start = table.children.nums.children[x1].cells[y1];
-            let end = table.children.nums.children[x2].cells[y2];
-
-            drawLine(start, end);
-        });
-    }
-
-    // Para table2
-    drawXInTable('table2', [
-        [[0, 0], [4, 4]],
-        [[4, 0], [0, 4]]
-    ]);
-
-    // Para table3
-    drawXInTable('table3', [
-        [[0, 0], [2, 2]],
-        [[2, 0], [0, 2]],
-        [[2, 0], [4, 2]],
-        [[4, 0], [2, 2]],
-        [[0, 2], [2, 4]],
-        [[2, 2], [0, 4]]
-    ]);
+        drawLine(start, end, id);
+    });
 }
 
-document.addEventListener('DOMContentLoaded', drawX())
+// Para tabla 2
+drawXInTable('table2', [
+    [[0, 0], [4, 4], 'X1'],
+    [[4, 0], [0, 4], 'X1']
+]);
+
+// Para tabla 3
+drawXInTable('table3', [
+    [[0, 0], [2, 2], 'X2'],
+    [[2, 0], [0, 2], 'X2'],
+    [[2, 0], [4, 2], 'X3'],
+    [[4, 0], [2, 2], 'X3'],
+    [[0, 2], [2, 4], 'X4'],
+    [[2, 2], [0, 4], 'X4']
+]);

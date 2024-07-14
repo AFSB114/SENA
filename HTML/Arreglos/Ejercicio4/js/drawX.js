@@ -9,7 +9,7 @@ function drawLine(start, end, id) {
     let x2 = point2.left + point2.width / 2
     let y2 = point2.top + point2.height / 2
 
-    // Calcula la distnacia que existe entre dos puntos de una recta
+    // Calcula la distancia que existe entre dos puntos de una recta
     let length = ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** (1 / 2)
 
     // Calcula el angulo que se origina entre dos puntos de una recta
@@ -17,7 +17,7 @@ function drawLine(start, end, id) {
     let m2 = 0
     let angle = Math.atan((m1 - m2) / (1 + m1 * m2)) * 180 / Math.PI
 
-    // Crea la linea y la ubica en la posicion y el angulo calculado
+    // Crea la linea y la ubica en el documento en la posicion y el angulo calculado
     let line = document.createElement('div')
     line.id = `${id}`
     line.className = 'line'
@@ -30,11 +30,11 @@ function drawLine(start, end, id) {
 }
 
 function drawX(tableId, coordinates) {
-
+    // trae la tabla deseada del documento
     const table = document.getElementById(tableId);
 
     coordinates.forEach(([[x1, y1], [x2, y2], id]) => {
-
+        //trae los dos elementos necesarios para hacer la linea
         let start = table.children.nums.children[x1].cells[y1];
         let end = table.children.nums.children[x2].cells[y2];
 
@@ -63,6 +63,7 @@ function createX() {
 function redrawAllX() {
     // Elimina todas las líneas existentes
     document.querySelectorAll('.line').forEach(line => line.remove());
+    // crea nuevamente las lineas
     createX()
 }
 

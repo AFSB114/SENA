@@ -1,5 +1,4 @@
 function drawLine(start, end, id) {
-
     // Extrae las coordenadas de cada elemento en el documento
     let point1 = start.getBoundingClientRect()
     let point2 = end.getBoundingClientRect()
@@ -30,7 +29,7 @@ function drawLine(start, end, id) {
     document.body.appendChild(line)
 }
 
-function drawXInTable(tableId, coordinates) {
+function drawX(tableId, coordinates) {
 
     const table = document.getElementById(tableId);
 
@@ -43,18 +42,36 @@ function drawXInTable(tableId, coordinates) {
     });
 }
 
-// Para tabla 2
-drawXInTable('table2', [
-    [[0, 0], [4, 4], 'X1'],
-    [[4, 0], [0, 4], 'X1']
-]);
+function createX() {
+    // Tabla 2
+    drawX('table2', [
+        [[0, 0], [4, 4], 'X1'],
+        [[4, 0], [0, 4], 'X1']
+    ]);
 
-// Para tabla 3
-drawXInTable('table3', [
-    [[0, 0], [2, 2], 'X2'],
-    [[2, 0], [0, 2], 'X2'],
-    [[2, 0], [4, 2], 'X3'],
-    [[4, 0], [2, 2], 'X3'],
-    [[0, 2], [2, 4], 'X4'],
-    [[2, 2], [0, 4], 'X4']
-]);
+    // Tabla 3
+    drawX('table3', [
+        [[0, 0], [2, 2], 'X2'],
+        [[2, 0], [0, 2], 'X2'],
+        [[2, 0], [4, 2], 'X3'],
+        [[4, 0], [2, 2], 'X3'],
+        [[0, 2], [2, 4], 'X4'],
+        [[2, 2], [0, 4], 'X4']
+    ]);
+}
+
+function redrawAllX() {
+    // Elimina todas las líneas existentes
+    document.querySelectorAll('.line').forEach(line => line.remove());
+    createX()
+}
+
+// Agregar el evento resize
+window.addEventListener('resize', () => {
+    setTimeout(() => {
+        redrawAllX()
+    }, 500);
+});
+
+// Dibujar las líneas inicialmente
+window.addEventListener('DOMContentLoaded',createX())

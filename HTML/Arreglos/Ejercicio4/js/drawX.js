@@ -63,7 +63,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
 function redrawAllX() {
     // Elimina todas las líneas existentes
-    document.querySelectorAll('.line').forEach(line => line.remove());
+    let lines = document.querySelectorAll('.line');
+    lines.forEach(line => line.remove())
     // crea nuevamente las lineas
     createX()
 }

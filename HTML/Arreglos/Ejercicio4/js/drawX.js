@@ -31,7 +31,7 @@ function drawLine(start, end, id) {
 
 function drawX(tableId, coordinates) {
     // trae la tabla deseada del documento
-    const table = document.getElementById(tableId);
+    let table = document.getElementById(tableId);
 
     coordinates.forEach(([[x1, y1], [x2, y2], id]) => {
         //trae los dos elementos necesarios para hacer la linea
@@ -42,8 +42,7 @@ function drawX(tableId, coordinates) {
     });
 }
 
-// Dibujar las líneas inicialmente
-window.addEventListener('DOMContentLoaded', () => {
+function createX() {
     // Tabla 2
     drawX('table2', [
         [[0, 0], [4, 4], 'X1'],
@@ -59,19 +58,18 @@ window.addEventListener('DOMContentLoaded', () => {
         [[0, 2], [2, 4], 'X4'],
         [[2, 2], [0, 4], 'X4']
     ]);
-})
-
-function redrawAllX() {
-    // Elimina todas las líneas existentes
-    let lines = document.querySelectorAll('.line');
-    lines.forEach(line => line.remove())
-    // crea nuevamente las lineas
-    createX()
 }
+
+// Dibujar las líneas inicialmente
+window.addEventListener('DOMContentLoaded', createX())
 
 // Agregar el evento resize
 window.addEventListener('resize', () => {
     setTimeout(() => {
-        redrawAllX()
+        // Elimina todas las líneas existentes
+        let lines = document.querySelectorAll('.line');
+        lines.forEach(line => line.remove())
+        // crea nuevamente las lineas
+        createX()
     }, 500);
 });

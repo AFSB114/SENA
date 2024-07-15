@@ -42,7 +42,8 @@ function drawX(tableId, coordinates) {
     });
 }
 
-function createX() {
+// Dibujar las líneas inicialmente
+window.addEventListener('DOMContentLoaded', () => {
     // Tabla 2
     drawX('table2', [
         [[0, 0], [4, 4], 'X1'],
@@ -58,7 +59,7 @@ function createX() {
         [[0, 2], [2, 4], 'X4'],
         [[2, 2], [0, 4], 'X4']
     ]);
-}
+})
 
 function redrawAllX() {
     // Elimina todas las líneas existentes
@@ -73,6 +74,3 @@ window.addEventListener('resize', () => {
         redrawAllX()
     }, 500);
 });
-
-// Dibujar las líneas inicialmente
-window.addEventListener('DOMContentLoaded',createX())

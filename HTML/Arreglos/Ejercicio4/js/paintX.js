@@ -5,7 +5,7 @@ function createCircle(pposition) {
     circle.style.width = `${position.width - 15}px`
     circle.style.height = `${position.height}px`
     circle.style.top = `${position.top}px`
-    circle.style.left = `${position.left}px`
+    circle.style.left = `${position.left + (position.width / 2) - ((position.width - 15) / 2)}px`
     circle.style.borderRadius = '100%'
     return circle
 }
@@ -69,5 +69,5 @@ window.addEventListener('resize', () => {
         marks.forEach(mark => mark.remove())
         // crea nuevamente las lineas
         paintX()
-    }, 100);
+    }, 500);
 });

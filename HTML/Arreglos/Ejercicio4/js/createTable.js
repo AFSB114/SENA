@@ -53,7 +53,7 @@ screen = ''
 for (let index1 = 0; index1 < 5; index1++) {
     screen += '<tr>'
     for (let index2 = 0; index2 < 5; index2++) {
-        screen += `<td>${tableBingo[index2][index1]}</td>`
+        screen += `<td class="col-2">${tableBingo[index2][index1]}</td>`
     }
     screen += '</tr>'
 }

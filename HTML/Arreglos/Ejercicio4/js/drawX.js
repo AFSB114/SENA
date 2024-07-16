@@ -1,7 +1,7 @@
-function drawLine(start, end, id) {
+function drawLine(ppoint1, ppoint2, id) {
     // Extrae las coordenadas de cada elemento en el documento
-    let point1 = start.getBoundingClientRect()
-    let point2 = end.getBoundingClientRect()
+    let point1 = ppoint1.getBoundingClientRect()
+    let point2 = ppoint2.getBoundingClientRect()
 
     // Calcula las coordenadas del punto central de cada elemento
     let x1 = point1.left + point1.width / 2
@@ -35,10 +35,10 @@ function drawX(tableId, coordinates) {
 
     coordinates.forEach(([[x1, y1], [x2, y2], id]) => {
         //trae los dos elementos necesarios para hacer la linea
-        let start = table.children.nums.children[x1].cells[y1];
-        let end = table.children.nums.children[x2].cells[y2];
+        let point1 = table.children.nums.children[x1].cells[y1];
+        let point2 = table.children.nums.children[x2].cells[y2];
 
-        drawLine(start, end, id);
+        drawLine(point1, point2, id);
     });
 }
 

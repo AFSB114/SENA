@@ -1,3 +1,5 @@
+let position = document.getElementById('lines')
+
 function drawLine(ppoint1, ppoint2, id) {
     // Extrae las coordenadas de cada elemento en el documento
     let point1 = ppoint1.getBoundingClientRect()
@@ -26,7 +28,7 @@ function drawLine(ppoint1, ppoint2, id) {
     line.style.left = `${x1}px`
     line.style.top = `${y1}px`
 
-    document.body.appendChild(line)
+    position.appendChild(line)
 }
 
 function drawX(tableId, coordinates) {

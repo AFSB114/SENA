@@ -1,66 +1,97 @@
-let numsBingo = [];
-let cont = 1;
+window.addEventListener('DOMContentLoaded', function () {
+    let numsBingo = [];
+    let cont = 1;
 
-for (let index1 = 0; index1 < 5; index1++) {
-    numsBingo[index1] = [];
-    for (let index2 = 0; index2 < 15; index2++) {
-        numsBingo[index1][index2] = cont;
-        cont++;
-    }
-}
-
-let tableBingo = [];
-
-const getAvailableNumbers = function (index) {
-    let availableNumbers = [];
-    numsBingo[index].forEach(num => {
-        if (!tableBingo[index] || !tableBingo[index].includes(num)) {
-            availableNumbers.push(num);
+    for (let index1 = 0; index1 < 5; index1++) {
+        numsBingo[index1] = [];
+        for (let index2 = 0; index2 < 15; index2++) {
+            numsBingo[index1][index2] = cont;
+            cont++;
         }
-    });
-    return availableNumbers;
-}
-
-const numRandom = function (index) {
-    let availableNumbers = getAvailableNumbers(index);
-    if (availableNumbers.length === 0) {
-        return null; // No hay más números disponibles
     }
-    let randomIndex = Math.floor(Math.random() * availableNumbers.length);
-    return availableNumbers[randomIndex];
-}
 
-for (let index1 = 0; index1 < 5; index1++) {
-    let nums = [];
-    for (let index2 = 0; index2 < 5; index2++) {
-        let num = numRandom(index1);
-        if (num !== null) {
-            if (!tableBingo[index1]) {
-                tableBingo[index1] = [];
+    let tableBingo = [];
+
+    const getAvailableNumbers = function (index) {
+        let availableNumbers = [];
+        numsBingo[index].forEach(num => {
+            if (!tableBingo[index] || !tableBingo[index].includes(num)) {
+                availableNumbers.push(num);
             }
-            tableBingo[index1].push(num);
-        } else {
-            break; // No hay más números disponibles para esta columna
+        });
+        return availableNumbers;
+    }
+
+    const numRandom = function (index) {
+        let availableNumbers = getAvailableNumbers(index);
+        if (availableNumbers.length === 0) {
+            return null;
+        }
+        let randomIndex = Math.floor(Math.random() * availableNumbers.length);
+        return availableNumbers[randomIndex];
+    }
+
+    for (let index1 = 0; index1 < 5; index1++) {
+        let nums = [];
+        for (let index2 = 0; index2 < 5; index2++) {
+            let num = numRandom(index1);
+            if (num !== null) {
+                if (!tableBingo[index1]) {
+                    tableBingo[index1] = [];
+                }
+                tableBingo[index1].push(num);
+            } else {
+                break;
+            }
+        }
+        if (nums.length > 0) {
+            tableBingo[index1] = nums;
         }
     }
-    if (nums.length > 0) {
-        tableBingo[index1] = nums;
+
+    let contId = 1;
+
+    function createTable(numTables, idRow) {
+        for (let index = 0; index < numTables; index++) {
+            let table = document.createElement('table')
+            table.id = `table-${contId}`
+            contId++
+            table.classList.add('table', 'table-bordered', 'border-dark')
+
+            table.appendChild(document.createElement('thead'))
+            table.children[0].classList.add('table-dark')
+
+            table.children[0].appendChild(document.createElement('tr'))
+            for (let index1 = 0; index1 < 5; index1++) {
+                table.children[0].children[0].appendChild(document.createElement('th'))
+                table.children[0].children[0].children[index1].classList.add('col-2')
+                table.children[0].children[0].children[index1].innerText = letters[index1]
+            }
+
+            table.appendChild(document.createElement('tbody'))
+
+            for (let index1 = 0; index1 < 5; index1++) {
+                table.children[1].appendChild(document.createElement('tr'))
+                for (let index2 = 0; index2 < 5; index2++) {
+                    table.children[1].children[index1].appendChild(document.createElement('td'))
+                    table.children[1].children[index1].children[index2].classList.add('col-2')
+                    table.children[1].children[index1].children[index2].innerText = tableBingo[index2][index1]
+                }
+            }
+
+            let div = document.createElement('div')
+            let colNum = numTables > 4 ? 2 : 3
+            div.classList.add(`col-${colNum}`)
+            div.appendChild(table)
+            document.getElementById(`row-${idRow}`).appendChild(div)
+        }
     }
-}
 
-screen = ''
+    let letters = ['B', 'I', 'N', 'G', 'O']
 
-for (let index1 = 0; index1 < 5; index1++) {
-    screen += '<tr>'
-    for (let index2 = 0; index2 < 5; index2++) {
-        screen += `<td class="col-2">${tableBingo[index2][index1]}</td>`
-    }
-    screen += '</tr>'
-}
-
-
-let tables = document.getElementsByName('nums')
-
-tables.forEach(tabla => {
-    tabla.innerHTML = screen
+    createTable(1, 1)
+    
+    createTable(2, 2)
+    
+    createTable(5, 3)
 })

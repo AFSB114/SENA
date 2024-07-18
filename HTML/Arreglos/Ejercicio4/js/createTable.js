@@ -74,7 +74,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 table.children[1].appendChild(document.createElement('tr'))
                 for (let index2 = 0; index2 < 5; index2++) {
                     table.children[1].children[index1].appendChild(document.createElement('td'))
-                    table.children[1].children[index1].children[index2].classList.add('col-2')
+                    table.children[1].children[index1].children[index2].classList.add('col-2', 'cell')
                     table.children[1].children[index1].children[index2].innerText = tableBingo[index2][index1]
                 }
             }

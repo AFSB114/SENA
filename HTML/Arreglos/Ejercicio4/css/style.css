@@ -1,13 +1,33 @@
-.mark {
-    position: absolute;
-    z-index: 1;
-    transform-origin: 0 50%;
-}
-
 body {
     background-color: rgb(105, 105, 105);
 }
 
 h2 {
     color: white;
+}
+
+.cell-body {
+    display: grid;
+    grid-template-areas: 'items';
+}
+
+.cell-body:hover, .letters:hover {
+    transform: scale(1.5);
+    transition: 200ms ease-in-out;
+    cursor: default;
+}
+
+thead {
+    cursor: default;
+}
+
+.num {
+    z-index: 2;
+    grid-area: items;
+}
+
+.mark {
+    z-index: 1;
+    grid-area: items;
+    border-radius: 100%;
 }

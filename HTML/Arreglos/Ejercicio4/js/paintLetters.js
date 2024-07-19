@@ -7,9 +7,11 @@ function paintLetters() {
             let letter = index - 4
     
             for (let index1 = 0; index1 < 5; index1++) {
+
+                let circle = createCircle()
     
-                let cell = table.children[1].children[index1].children[letter]
-    
+                let cell = table.children[1].children[index1].children[letter].children[0]
+
                 let color = ''
                 switch (true) {
                     case letter === 0:
@@ -31,12 +33,13 @@ function paintLetters() {
                         color = 'secondary'
                         break
                 }
-    
-                cell.classList.add(`table-${color}`, 'border-dark')
+                
+                circle.classList.add('mark',`bg-${color}-subtle`)
+                cell.appendChild(circle)
     
             }
         }
-    },1)
+    },2)
 }
 
 window.addEventListener('DOMContentLoaded', paintLetters())

@@ -58,7 +58,7 @@ window.addEventListener('DOMContentLoaded', function () {
             table.children[0].classList.add('table-dark')
 
             table.children[0].appendChild(document.createElement('tr'))
-            for (let index1 = 0; index1 < 5; index1++) {
+            for (let index1 = 0; index1 < letters.length; index1++) {
                 table.children[0].children[0].appendChild(document.createElement('th'))
 
                 table.children[0].children[0].children[index1].classList.add('col-2')
@@ -70,9 +70,9 @@ window.addEventListener('DOMContentLoaded', function () {
 
             table.appendChild(document.createElement('tbody'))
 
-            for (let index1 = 0; index1 < 5; index1++) {
+            for (let index1 = 0; index1 < tableBingo.length; index1++) {
                 table.children[1].appendChild(document.createElement('tr'))
-                for (let index2 = 0; index2 < 5; index2++) {
+                for (let index2 = 0; index2 < tableBingo[index1].length; index2++) {
                     table.children[1].children[index1].appendChild(document.createElement('td'))
                     table.children[1].children[index1].children[index2].classList.add('col-2')
                     table.children[1].children[index1].children[index2].appendChild(document.createElement('div'))

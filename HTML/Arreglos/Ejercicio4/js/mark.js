@@ -1,5 +1,4 @@
 function mark() {
-
     setTimeout(() => {
         let table = document.getElementById("table-1")
 

@@ -9,8 +9,13 @@ function mark() {
                 for (let index1 = 0; index1 < 5; index1++) {
                     for (let index2 = 0; index2 < 5; index2++) {
                         if (index1 === index2 || index1 + index2 === 4) {
-                            table.children[1].children[index1].children[index2].children[0].children[1].style.display = 'block'
-                            table.children[1].children[index1].children[index2].children[0].children[1].value = true
+                            if (table.children[1].children[index1].children[index2].children[0].children[1].value === true) {
+                                table.children[1].children[index1].children[index2].children[0].children[1].style.display = 'none'
+                                table.children[1].children[index1].children[index2].children[0].children[1].value = false
+                            } else {
+                                table.children[1].children[index1].children[index2].children[0].children[1].style.display = 'block'
+                                table.children[1].children[index1].children[index2].children[0].children[1].value = true
+                            }
                         }
                     }
                 }
@@ -19,8 +24,13 @@ function mark() {
             for (let index1 = 0; index1 < 5; index1++) {
                 if (event.key.toUpperCase() === letters[index1]) {
                     for (let index2 = 0; index2 < 5; index2++) {
-                        table.children[1].children[index2].children[index1].children[0].children[1].style.display = 'block'
-                        table.children[1].children[index2].children[index1].children[0].children[1].value = true
+                        if (table.children[1].children[index2].children[index1].children[0].children[1].value === true) {
+                            table.children[1].children[index2].children[index1].children[0].children[1].style.display = 'none'
+                            table.children[1].children[index2].children[index1].children[0].children[1].value = false
+                        } else {
+                            table.children[1].children[index2].children[index1].children[0].children[1].style.display = 'block'
+                            table.children[1].children[index2].children[index1].children[0].children[1].value = true
+                        }
                     }
                 }
             }

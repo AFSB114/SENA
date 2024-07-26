@@ -17,6 +17,8 @@ window.addEventListener('DOMContentLoaded', function () {
         numsBingo[index].forEach(num => {
             if (!tableBingo[index] || !tableBingo[index].includes(num)) {
                 availableNumbers.push(num)
+            } else {
+                null
             }
         });
         return availableNumbers
@@ -26,6 +28,8 @@ window.addEventListener('DOMContentLoaded', function () {
         let availableNumbers = getAvailableNumbers(index);
         if (availableNumbers.length === 0) {
             return null
+        } else {
+            null
         }
         let randomIndex = Math.floor(Math.random() * availableNumbers.length);
         return availableNumbers[randomIndex]
@@ -37,10 +41,12 @@ window.addEventListener('DOMContentLoaded', function () {
             if (num !== null) {
                 if (!tableBingo[index1]) {
                     tableBingo[index1] = []
+                } else {
+                    null
                 }
                 tableBingo[index1].push(num)
             } else {
-                break
+                null
             }
         }
     }

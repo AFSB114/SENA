@@ -14,6 +14,8 @@ function paintX() {
                     let circle = createCircle()
                     circle.style.backgroundColor = 'rgba(13, 109, 253, 0.25)'
                     table2.children[1].children[index1].children[index2].children[0].appendChild(circle)
+                } else {
+                    null
                 }
             }
         }
@@ -26,6 +28,8 @@ function paintX() {
                     let circle = createCircle()
                     circle.style.backgroundColor = 'rgb(25, 135, 84, 0.25)'
                     table3.children[1].children[index1].cells[index2].children[0].appendChild(circle)
+                } else {
+                    null
                 }
             }
         }
@@ -36,6 +40,8 @@ function paintX() {
                     let circle = createCircle()
                     circle.style.backgroundColor = 'rgb(220, 53, 69, 0.25)'
                     table3.children[1].children[index1].cells[index2].children[0].appendChild(circle)
+                } else {
+                    null
                 }
             }
         }
@@ -46,6 +52,8 @@ function paintX() {
                     let circle = createCircle()
                     circle.style.backgroundColor = 'rgb(255, 193, 7, 0.25)'
                     table3.children[1].children[index1].cells[index2].children[0].appendChild(circle)
+                } else {
+                    null
                 }
             }
         }

@@ -42,7 +42,7 @@ for (let elemento of arreglo) {
 
 Arreglo de Pares
 
-let pares = [
+let pares = {
 	['nombre', 'Juan'],
 	['edad', 30]
 }

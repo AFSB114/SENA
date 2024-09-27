@@ -1,8 +1,25 @@
-.line {
-    position: absolute;
-    background-color: rgba(255, 0, 0, 0.5);
+.cell-body {
+    display: grid;
+    grid-template-areas: 'items';
+}
+
+.cell-body:hover, .letters:hover {
+    transform: scale(1.5);
+    transition: 200ms ease-in-out;
+    cursor: default;
+}
+
+thead {
+    cursor: default;
+}
+
+.num {
+    z-index: 2;
+    grid-area: items;
+}
+
+.mark {
     z-index: 1;
-    height: 5px;
-    transform-origin: 0 50%;
-    border-radius: 50px;
+    grid-area: items;
+    border-radius: 100%;
 }

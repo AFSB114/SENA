@@ -20,7 +20,7 @@ class Area
         return $this->rectangulo;
     }
 
-    public function calcAreaTria() : float {
+    public function calcAreaTria() : int | float {
         $this->triangulo = $this->figura->getBase() * $this->figura->getAltura() / 2;
         return $this->triangulo;
     }

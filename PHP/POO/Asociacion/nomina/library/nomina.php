@@ -4,13 +4,13 @@ const SAL_MIN = 1300000;
 
 class Nomina
 {
-    public int $salario;
-    public int $subTrans;
-    public float $salud;
-    public float $pension;
-    public float $arl;
-    public float $retencion;
-    public float $pagoTot;
+    private int $salario;
+    private int $subTrans;
+    private float $salud;
+    private float $pension;
+    private float $arl;
+    private float $retencion;
+    private float $pagoTot;
 
     public function __construct(
         private Empleado $empleado
@@ -24,43 +24,71 @@ class Nomina
         $this->calcPagoTot();
     }
 
-    public function calcSalario() : int {
+    private function calcSalario()
+    {
         $this->salario = $this->empleado->getNumDias() * $this->empleado->getValDia();
+    }
+
+    public function getSalario() : int {
         return $this->salario;
     }
 
-    public function calcSubTrans() : int {
+    private function calcSubTrans()
+    { 
         $this->subTrans = ($this->salario < SAL_MIN * 2) ? 120000 : 0;
+    }
+
+    public function getSubTrans() : int {
         return $this->subTrans;
     }
 
-    public function calcSalud() : float {
+    private function calcSalud()
+    {
         $this->salud = $this->salario * 0.12;
+    }
+
+    public function getSalud() : float {
         return $this->salud;
     }
 
-    public function calcPension() : float {
+    private function calcPension()
+    {
         $this->pension = $this->salario * 0.16;
+    }
+
+    public function getPension() : float {
         return $this->pension;
     }
 
-    public function calcArl() : float {
+    private function calcArl()
+    {
         $this->arl = $this->salario * 0.052;
+    }
+
+    public function getArl() : float {
         return $this->arl;
     }
 
-    public function calcRetencion() : float {
+    private function calcRetencion()
+    {
         $this->retencion = match (true) {
             $this->salario > SAL_MIN * 6  => $this->salario * 0.02,
             $this->salario > SAL_MIN * 8  => $this->salario * 0.04,
             $this->salario > SAL_MIN * 12 => $this->salario * 0.08,
             default => 0
         };
+    }
+
+    public function getRetencion() : float {
         return $this->retencion;
     }
 
-    public function calcPagoTot() : float {
+    private function calcPagoTot()
+    {
         $this->pagoTot = $this->salario + $this->subTrans - ($this->salud + $this->pension + $this->arl + $this->retencion);
+    }
+
+    public function getPagoTot() : float {
         return $this->pagoTot;
     }
 }

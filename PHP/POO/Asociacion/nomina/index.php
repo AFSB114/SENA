@@ -14,12 +14,12 @@ $nomina = new Nomina($empleado);
     <title>Document</title>
 </head>
 <body>
-    <?= $nomina->calcSalario()?><br>
-    <?= $nomina->calcSubTrans()?><br>
-    <?= $nomina->calcSalud()?><br>
-    <?= $nomina->calcPension()?><br>
-    <?= $nomina->calcArl()?><br>
-    <?= $nomina->calcRetencion()?><br>
-    <?= $nomina->calcPagoTot()?><br>
+    <?= $nomina->getSalario()?><br>
+    <?= $nomina->getSubTrans()?><br>
+    <?= $nomina->getSalud()?><br>
+    <?= $nomina->getPension()?><br>
+    <?= $nomina->getArl()?><br>
+    <?= $nomina->getRetencion()?><br>
+    <?= $nomina->getPagoTot()?><br>
 </body>
 </html>

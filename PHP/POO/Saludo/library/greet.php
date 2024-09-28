@@ -1,12 +1,12 @@
 <?php
 
-class Saludo {
-    public $saludar;
-     
-    public function saluda($saludar){
+class Saludo
+{
+    public string $saludar;
+
+    public function saluda(string $saludar): string
+    {
         $this->saludar = $saludar;
         return $this->saludar;
     }
 }
-
-?>

@@ -3,59 +3,73 @@
 class Empleado
 {
     public function __construct(
-        private int $id,
+        private int    $id,
         private string $nombre,
         private string $apellido,
         private string $cargo,
-        private int $valDia,
-        private int $numDias
-    ) {}
+        private int    $valDia,
+        private int    $numDias
+    )
+    {
+    }
 
-    public function getId() : int { 
+    public function getId(): int
+    {
         return $this->id;
     }
 
-    public function setId(int $id) {
+    public function setId(int $id): void
+    {
         $this->id = $id;
     }
 
-    public function getNombre() : string {
+    public function getNombre(): string
+    {
         return $this->nombre;
     }
 
-    public function setNombre(string $nombre) {
+    public function setNombre(string $nombre): void
+    {
         $this->nombre = $nombre;
     }
 
-    public function getApellido() : string {
+    public function getApellido(): string
+    {
         return $this->apellido;
     }
 
-    public function setApellido(string $apellido) {
+    public function setApellido(string $apellido): void
+    {
         $this->apellido = $apellido;
     }
 
-    public function getCargo() : string {
+    public function getCargo(): string
+    {
         return $this->cargo;
     }
 
-    public function setCargo(string $cargo) {
+    public function setCargo(string $cargo): void
+    {
         $this->cargo = $cargo;
     }
 
-    public function getValDia() : int {
+    public function getValDia(): int
+    {
         return $this->valDia;
     }
 
-    public function setValDia(int $valDia) {
+    public function setValDia(int $valDia): void
+    {
         $this->valDia = $valDia;
     }
 
-    public function getNumDias() : int {
+    public function getNumDias(): int
+    {
         return $this->numDias;
     }
 
-    public function setNumDias(int $numDias){
+    public function setNumDias(int $numDias): void
+    {
         $this->numDias = $numDias;
     }
 }

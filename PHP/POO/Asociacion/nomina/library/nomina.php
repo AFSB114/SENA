@@ -24,7 +24,7 @@ class Nomina
         $this->calcPagoTot();
     }
 
-    private function calcSalario()
+    private function calcSalario(): void
     {
         $this->salario = $this->empleado->getNumDias() * $this->empleado->getValDia();
     }
@@ -33,7 +33,7 @@ class Nomina
         return $this->salario;
     }
 
-    private function calcSubTrans()
+    private function calcSubTrans(): void
     { 
         $this->subTrans = ($this->salario < SAL_MIN * 2) ? 120000 : 0;
     }
@@ -42,7 +42,7 @@ class Nomina
         return $this->subTrans;
     }
 
-    private function calcSalud()
+    private function calcSalud(): void
     {
         $this->salud = $this->salario * 0.12;
     }
@@ -51,7 +51,7 @@ class Nomina
         return $this->salud;
     }
 
-    private function calcPension()
+    private function calcPension(): void
     {
         $this->pension = $this->salario * 0.16;
     }
@@ -60,7 +60,7 @@ class Nomina
         return $this->pension;
     }
 
-    private function calcArl()
+    private function calcArl(): void
     {
         $this->arl = $this->salario * 0.052;
     }
@@ -69,7 +69,7 @@ class Nomina
         return $this->arl;
     }
 
-    private function calcRetencion()
+    private function calcRetencion(): void
     {
         $this->retencion = match (true) {
             $this->salario > SAL_MIN * 6  => $this->salario * 0.02,
@@ -83,7 +83,7 @@ class Nomina
         return $this->retencion;
     }
 
-    private function calcPagoTot()
+    private function calcPagoTot(): void
     {
         $this->pagoTot = $this->salario + $this->subTrans - ($this->salud + $this->pension + $this->arl + $this->retencion);
     }
